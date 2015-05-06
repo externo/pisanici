@@ -74,18 +74,18 @@ body {background: url(http://static.tumblr.com/qboepjt/8bWmobv4z/bg.png); }
 */
 
 @font-face {
-    font-family: pmg;
-    src: url(fonts/Days.otf);
+    font-family: PETRICIC;
+    src: url(fonts/PETRICIC.ttf);
 }
 
 .supershortdesc {
-    font-family: 'pmg'; float:left; text-transform:uppercase; font-size:30px; margin-top:-30px; margin-left: 200px;
+    font-family: PETRICIC; float:left; text-transform:uppercase; font-size:30px; margin-top:-30px; margin-left: 200px;
     padding:  10px 10px; box-shadow: -1px 5px 5px #d7cba1; float:left; background:#948d6d;}
 .supershortdesc a{text-decoration:none; color:#fcf2d3;}
 
 #header .logo h1 a {
     display:block;background:url(http://static.tumblr.com/qboepjt/boymoqlud/logo_zepp_02.png) -33px 0px no-repeat;outline:0; font-size:48px;
-    font-family: 'pmg'; padding: 60px 0 50px 200px; letter-spacing: 5px; text-decoration:none;  text-shadow: 0px 3px 1px #d7cba1;  color: #8f835f;
+    font-family: PETRICIC; padding: 60px 0 50px 200px; letter-spacing: 5px; text-decoration:none;  text-shadow: 0px 3px 1px #d7cba1;  color: #8f835f;
     text-indent:-9999px;
 }
 
@@ -97,7 +97,7 @@ body {background: url(http://static.tumblr.com/qboepjt/8bWmobv4z/bg.png); }
 
 /* end logo */
 
-#header .hdesc {float:right; margin-top:60px; width:200px;font: 12px Georgia; color:#74663f;}
+#header .hdesc {float:right; margin-top:60px; width:200px;font: 12px Georgia; color:#74663f; font-family: PETRICIC}
 
 #content {margin: 0 auto; width: 980px;}
 
@@ -288,7 +288,7 @@ body {background: url(http://static.tumblr.com/qboepjt/8bWmobv4z/bg.png); }
 
 #sidebarcontent .menu {margin: 0px 0;float:left; width: 281px;}
 #sidebarcontent .menu ul li{font: 18px Georgia; margin: 10px 0;}
-#sidebarcontent .menu ul li a{color:#74663f; text-decoration:none;}
+#sidebarcontent .menu ul li a{color:#74663f; text-decoration:none; font-family: PETRICIC;}
 #sidebarcontent .menu ul li a:hover{ text-decoration:underline;}
 
 #sidebarcontent .search {float:left; width:281px; margin-bottom:5px;}
@@ -558,7 +558,7 @@ ul.tags .tag a {
 .widgetblock .wname { float:left; width: 235px;   height: 63px; overflow:hidden;
     font:italic 24px Georgia; font-weight:bold; color:#9a865d; background: url(http://static.tumblr.com/qboepjt/e32mon2u7/widget_head.png) 0 0 no-repeat; border-bottom:1px solid #c2b596;}
 .widgetblock .wname  {padding: 0px 12px 0px 12px;}
-.widgetblock .wname  a {float:left; width: 235px;  color:#9a865d; text-decoration:none; padding: 18px 0; height: 27px; }
+.widgetblock .wname  a {float:left; width: 235px;  color:#9a865d; text-decoration:none; padding: 18px 0; height: 27px;  font-family: PETRICIC}
 .widgetblock .wbody {
     float:left; width: 243px;
     padding: 15px 8px;

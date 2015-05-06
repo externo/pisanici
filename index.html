@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Писаници</title>
     <meta name="description" content="Лична страница на Евгения Илиева" />
-    <style type="text/css">figure {margin: 0;}</style>
+    <!--<style type="text/css">figure {margin: 0;}</style>-->
 
     <!--favicon and logo-->
     <link rel="shortcut icon" href="http://33.media.tumblr.com/avatar_2ae44300b0dd_128.png" />
@@ -22,6 +22,7 @@
     <!--Load Angular-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-route.min.js"></script>
+    <script src="http://code.angularjs.org/1.0.4/angular-sanitize.min.js"></script>
 
     <!--Load CSS styling-->
     <link rel='stylesheet' id='kindergarten-style-css'  href='styles/style.css' type='text/css' media='all' />
@@ -62,21 +63,24 @@
                 <div class="post">
                     <div class="ptop"></div>
                     <div class="pmiddle">
-                        <div class="pcontent iconchat">
+                        <div class="pcontent iconphoto">
                             <div class="postlink"><a href="http://zeppelintheme.tumblr.com/post/54134245712" class="permalink">Permalink</a></div>
                             <div class="posttitle"></div>
 
-                            <div class="photopost"> <a href="http://zeppelintheme.tumblr.com/post/54134245712" class="permalink"><img src="http://40.media.tumblr.com/1af48f99b24b8fcb7dcae8b101415f14/tumblr_mp4lg1lF251suexh0o3_500.jpg" alt="" width="500" /></a>
+                            <div class="photopost">
+                                <a href="http://zeppelintheme.tumblr.com/post/54134245712" class="permalink">
+                                    <img ng-src="images/poem/{{poem.img}}" alt="" width="500"/>
+                                </a>
                             </div>
                         </div>
                     </div>
 
                     <div class="pmiddle">
-                        <div class="pcontent icontext">
+                        <div class="pcontent iconchat">
                             <div class="postlink"><a href="http://zeppelintheme.tumblr.com/post/52371969029/lorem-ipsum-dolor-sit-amet" class="permalink">Permalink</a></div>
                             <div class="posttitle"><h2><a href="http://zeppelintheme.tumblr.com/post/52371969029/lorem-ipsum-dolor-sit-amet" class="permalink">{{poem.title}}</a></h2></div>
                             <div class="textpost">
-                                <p ng-bind-html-unsafe="poem.content"></p>
+                                <p ng-bind-html="poem.content"></p>
                                 <ul class="tags">
                                     <li class='tag'>
                                         <a href="http://zeppelintheme.tumblr.com/tagged/text">#text</a>
@@ -98,15 +102,6 @@
                         <div class="comments">
                             <a class="dsq-comment-count" href="http://zeppelintheme.tumblr.com/post/52371969029/lorem-ipsum-dolor-sit-amet#disqus_thread">Comments</a>
                         </div>
-                        <!--<script type="text/javascript">-->
-                            <!--var disqus_shortname = 'zeppelintheme';-->
-                            <!--(function () {-->
-                                <!--var s = document.createElement('script'); s.async = true;-->
-                                <!--s.type = 'text/javascript';-->
-                                <!--s.src = '//' + disqus_shortname + '.disqus.com/count.js';-->
-                                <!--(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);-->
-                            <!--}());-->
-                        <!--</script>-->
                     </div>
                 </div>
                 <div class="postdivider"></div>

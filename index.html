@@ -12,6 +12,17 @@
     <!--<link rel="apple-touch-icon" href="http://33.media.tumblr.com/avatar_2ae44300b0dd_128.png" />-->
     <!--<meta name="image:Logo" content="http://static.tumblr.com/qboepjt/boymoqlud/logo_zepp_02.png"/>-->
 
+    <!--Load jQuery-->
+    <script type='text/javascript' src="https://code.jquery.com/jquery-2.1.4.js"></script>
+
+    <!--Load Bootstrap!-->
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+    <!--Load Angular-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-route.min.js"></script>
+
     <!--Load CSS styling-->
     <link rel='stylesheet' id='kindergarten-style-css'  href='styles/style.css' type='text/css' media='all' />
     <link rel='stylesheet' id='kindergarten-fontawesomecss-css'  href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css' type='text/css' media='all' />
@@ -25,27 +36,29 @@
     <script type="text/javascript" src="http://static.tumblr.com/3ikgvxs/0TGl4zgpu/jquery.min.js"></script>
     <script type="text/javascript" src="http://static.tumblr.com/qxrkgx6/SxJl8uj1r/scrollto.js"></script>
     <script type="text/javascript" src="http://static.tumblr.com/l8h6vw3/1pWm05im7/functions.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/poemController.js"></script>
 
 </head>
-<body>
+<body ng-app="App">
 <div id="backtotop"></div>
 <div id="wrapper">
     <div id="header">
         <div class="width980container">
             <div class="logo"><h1><a href="/">Писаници 2</a></h1></div>
 
-            <div class="hdesc">Лична уеб страница на Евгения Илиева.</div>
+            <div class="hdesc">Лична уеб страница на Евгения Илиева 123</div>
             <div class="clear"></div>
 
-            <div class="supershortdesc"><a href="/">Стихове</a></div>
+            <div class="supershortdesc"><a href="/">Стихове 1 2 3</a></div>
         </div>
     </div>
-    <div id="content">
-        <div id="maincontent">
-            <div class="autopagerize_page_element">
 
-                <!-- /AUDIO -->
-                <!-- begin post -->
+    <div id="content" data-ng-controller="poemCtrl">
+        <div id="maincontent">
+            <div class="autopagerize_page_element" ng-repeat="poem in poems">
+
+                <!-- begin ARTICLE -->
                 <div class="post">
                     <div class="ptop"></div>
                     <div class="pmiddle">
@@ -61,10 +74,9 @@
                     <div class="pmiddle">
                         <div class="pcontent icontext">
                             <div class="postlink"><a href="http://zeppelintheme.tumblr.com/post/52371969029/lorem-ipsum-dolor-sit-amet" class="permalink">Permalink</a></div>
-                            <div class="posttitle"><h2><a href="http://zeppelintheme.tumblr.com/post/52371969029/lorem-ipsum-dolor-sit-amet" class="permalink">Lorem ipsum dolor sit amet</a></h2></div>
+                            <div class="posttitle"><h2><a href="http://zeppelintheme.tumblr.com/post/52371969029/lorem-ipsum-dolor-sit-amet" class="permalink">{{poem.title}}</a></h2></div>
                             <div class="textpost">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eget magna quis mauris tincidunt auctor quis vel nisl. Suspendisse sit amet accumsan lectus, id auctor lorem. Morbi id quam libero. Nulla facilisi. Nam rutrum sollicitudin risus et mollis. Morbi congue urna eget erat varius, eu pretium nibh hendrerit. Sed non tempus augue. Aliquam vel est sit amet risus volutpat pulvinar. Mauris ac eleifend ligula. Vestibulum adipiscing tempor mi eget mattis. Cras fringilla elementum scelerisque.</p>
-                                <p>Nullam a felis sed odio tempus pellentesque. Integer lorem lacus, viverra sit amet venenatis sed, scelerisque at tortor. Praesent ac mauris sed quam pellentesque semper. Etiam viverra vel augue at interdum. In non molestie massa. Aenean nec velit erat. Etiam nibh erat, sollicitudin non porttitor non, accumsan vel felis. Aenean commodo rhoncus tincidunt. Ut eget libero sem. Sed fermentum ipsum sapien. Suspendisse eu tincidunt arcu. Sed sed nunc nec justo pellentesque semper in id neque. Sed pellentesque mauris sed lorem tincidunt, at laoreet mauris dapibus. Suspendisse potenti. Donec a vestibulum enim.</p>
+                                <p ng-bind-html-unsafe="poem.content"></p>
                                 <ul class="tags">
                                     <li class='tag'>
                                         <a href="http://zeppelintheme.tumblr.com/tagged/text">#text</a>
@@ -86,26 +98,26 @@
                         <div class="comments">
                             <a class="dsq-comment-count" href="http://zeppelintheme.tumblr.com/post/52371969029/lorem-ipsum-dolor-sit-amet#disqus_thread">Comments</a>
                         </div>
-                        <script type="text/javascript">
-                            var disqus_shortname = 'zeppelintheme';
-                            (function () {
-                                var s = document.createElement('script'); s.async = true;
-                                s.type = 'text/javascript';
-                                s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-                                (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-                            }());
-                        </script>
+                        <!--<script type="text/javascript">-->
+                            <!--var disqus_shortname = 'zeppelintheme';-->
+                            <!--(function () {-->
+                                <!--var s = document.createElement('script'); s.async = true;-->
+                                <!--s.type = 'text/javascript';-->
+                                <!--s.src = '//' + disqus_shortname + '.disqus.com/count.js';-->
+                                <!--(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);-->
+                            <!--}());-->
+                        <!--</script>-->
                     </div>
                 </div>
                 <div class="postdivider"></div>
-                <!-- end post  -->
+                <!-- end ARTICLE  -->
             </div>
 
             <div class="clear"></div>
 
+            <!--TODO: nextpage-->
             <div class="navigation">
-                <div id="next"><a href="/page/2"><img src="http://static.tumblr.com/qboepjt/veNmoj6gh/arrow_right.png" alt="Next" /></a></div>
-
+                <div id="next"><a href="/page/2"><img src="images/next_page.png" alt="Next" /></a></div>
                 <!-- span class="page_number">1/2</span -->
             </div>
         </div>
@@ -119,14 +131,11 @@
                     <input type="submit" class="searchbutton" value="Search"/>
                 </form>
             </div>
+
+            <!--POEM list-->
             <div class="menu">
-                <ul>
-                    <li><a  href="/about">Като птиците</a></li>
-                    <li><a  href="/contact">Като овците</a></li>
-                    <li><a  href="/specifications">И така</a></li>
-                    <li><a href="/archive">Синия човек</a></li>
-                    <li><a href="/random">Бембения човек</a></li>
-                    <li><a href="/ask">Още</a></li>
+                <ul ng-repeat="poem in poems">
+                    <li><a  href="/about">{{poem.title}}</a></li>
                 </ul>
             </div>
 
